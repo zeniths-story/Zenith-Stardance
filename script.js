@@ -1,4 +1,6 @@
 
+
+//opening and closing
 var welcomeScreen = document.querySelector("#welcome");
 function closeWindow(element) {
     element.style.display = "none";
@@ -23,13 +25,13 @@ setInterval(function (){
 }, 1000)
 
 //dragging elements - buggy; needs fixed
-dragElement(document.getElementById("welcome"))
+dragElement(document.getElementById("welcome"));
 
 function dragElement(element) {
-    var initx = 0;
-    var inity = 0;
-    var currx = 0;
-    var curry = 0;
+    var initX = 0;
+    var initY = 0;
+    var currX = 0;
+    var currY = 0;
     if (document.getElementById(element.id + "header")){
         document.getElementById(element.id + "header").onmousedown = startDragging;
     }else{
@@ -39,20 +41,20 @@ function dragElement(element) {
   function startDragging(e) {
       e = e || window.event;
       e.preventDefault();
-      initx = e.clientx;
-      inity = e.clienty;
+      initX = e.clientX;
+      initY = e.clientY;
       document.onmouseup = stopDragging;
       document.onmousemove = dragElement;
 }
 function dragElement(e){
     e = e || window.event;
     e.preventDefault();
-    currx = initx - e.clientx;
-    curry = inity - e.clienty;
-    initx = e.clientx;
-    inity = e.clienty;
-    element.style.top = (element.offsetTop - curry) + "px";
-    element.style.left = (element.ofsetLeft - currx) + "px";
+    currX = initX - e.clientX;
+    currY = initY - e.clientY;
+    initX = e.clientX;
+    initY = e.clientY;
+    element.style.top = (element.offsetTop - currY) + "px";
+    element.style.left = (element.ofsetLeft - currX) + "px";
 }
 
 function stopDragging () {
