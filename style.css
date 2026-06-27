@@ -15,7 +15,7 @@ body{
 
 }
 
-#welcome {
+#wlcmescrn {
  border: dotted #93a1d6 5px;
  background-color: #000222;
  width: fit-content;
@@ -41,7 +41,7 @@ body{
 }
 
 
-#welcomeheader{
+#wlcmescrnheader{
     width: 90%;
     height: 20%;
     background-color: #6d1365;
@@ -50,11 +50,11 @@ body{
     text-align: center;
 }
 
-#welcomeopen, #welcomeclose {
+/*#welcomeopen, #welcomeclose {
     cursor: pointer;
-}
+}*/
 
-#welcomeclose{
+#wlcmeclose{
     color:#9734d1;
     font-family: sans-serif;
 }

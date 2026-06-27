@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Zenith OS </title>
+    <title>Nova OS </title>
     <link href="/style.css" rel="stylesheet"/>
     <script src="/script.js"></script>
   </head>
@@ -11,22 +11,30 @@
 
 <!-- Top bar-->
 <div class="topbar">
-  <p><a href="https://apod.nasa.gov/apod/ap260622.html">Bg</a></p>
-  <p>Zenith OS</p>
+  <p><a id="wlcmeopen" onclick="openWindow()">WW</a> <a href="https://apod.nasa.gov/apod/ap260622.html">Bg</a></p>
+
+  <p>Nova OS</p>
   <p id="timeOfEarth">earthtime</p> <!--time string-->
-  <p id="welcomeopen">WW</p>
+
 </div>
 
 <!-- Welcome Window-->
-  <div  class="window" id="welcome">
-    <div id="welcomeheader">
-      <p id="welcomeclose">close</p>
+  <div  class="window" id="wlcmescrn">
+    <div id="wlcmescrnheader">
+
+      <p onclick="closeWindow()" id="wlcmeclose" 
+      style="cursor: pointer; display: flex; justify-content: center;"> close </p>
+
     </div>
-    <h1>Zenith OS</h1>
+
+    <h1>Nova OS</h1>
     <p> This is my <em>very </em>wip os</p>
+
+
+    <p id="test" onclick="test()">test</p>
   </div>
 
-
+<!-- onclick="test()" -->
 
   </body>
 
