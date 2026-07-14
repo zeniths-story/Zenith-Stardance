@@ -4,7 +4,7 @@ setInterval(function () {
     document.querySelector("#timeOfEarth").innerHTML = new Date().toLocaleString();
 }, 1000);
 
-
+var topBar = document.querySelector("#top")
 
 //clicktest
 //document.getElementById("wlcmeclose").onclick =test();
@@ -15,32 +15,53 @@ function test() {
   
 };
 
+//rand
+var highindx = 1;
 
+function addWindTapHand(element){
+  element.addEventListener("mousedown", () => handWindTap(element) 
+ )
+};
 
+function handWindTap (element) {
+  highindx++;
+  element.style.zIndex = highindx
+  deselectIcon(slectIcon)
+};
 
+function initwind(elementName) {
+  var screen = document.querySelector("#"+ elementName);
+  addWindTapHand(screen)
+  dragElement(screen)
+//makeCloseable(elementName);
+}
 
+initwind(notesScreen)
 
 //opening and closing - does not work currently
 
-//defining screens
-var welcomeScreen = document.querySelector("#wlcmescrn");
-var welcomeScreen = document.getElementById("wlcmescrn");
-
 //close def.
 var welcomeScreenClose = document.querySelector("#wlcmeclose");
-var welcomeScreenClose = document.getElementById("#wlcmeclose");
+var notesclose = document.querySelector("#novanotesclose")
 
 function closeWindow(element) {
-    style.display = "none";
+    element.style.display = "none";
 
-}
+};
 
 //open def.
 var welcomeScreenOpen = document.querySelector("#wlcmeopen");
 
 function openWindow(element){
-    style.display = "flex";
-}
+    element.style.display = "flex";
+    highindx++;
+    element.style.zIndex = highindx;
+    topBar.style.zIndex = highindx + 1
+};
+
+//defining screens
+var welcomeScreen = document.querySelector("#wlcmescrn");
+var notesScreen = document.querySelector("#NovaNotes");
 
 //open/close commands
 welcomeScreenClose.addEventListener("click", function () {
@@ -63,7 +84,7 @@ welcomeScreenOpen.addEventListener("click", function () {
 //dragging elements - buggy; needs fixed
 //elements we (are trying to) drag
 dragElement(welcomeScreen);
-dragElement(document.querySelector("#NovaNotes"))
+dragElement(document.querySelector("#NovaNotes"));
 
 
 //defining dragElement
@@ -79,7 +100,7 @@ function dragElement(element) {
 
     element.onmousedown = startDrag;
 
-  }
+  };
 
   function startDrag(e) {
     e = e || window.event;
@@ -88,7 +109,7 @@ function dragElement(element) {
     initY = e.clientY;
     document.onmouseup = stopDrag;
     document.onmousemove = dragElement;
-  }
+  };
 
   function dragElement(e) {
     e = e || window.event;
@@ -99,13 +120,13 @@ function dragElement(element) {
     initY = e.clientY;
     element.StyleSheet.top = (element.offsetTop - currY) + "px";
     element.StyleSheet.left = (element.offsetLeft - currX) + "px";
-  }
+  };
 
   function stopDrag() {
     document.onmouseup = null;
     document.onmousemove = null;
-  }
-}
+  };
+};
 
 
 
@@ -113,24 +134,24 @@ function dragElement(element) {
 
 
 //app stuff
-var slectIcon = undefined
+var slectIcon = undefined;
 
 function selectIcon(element) {
-  element.classList.add("slect")
-  slectIcon = element
-}
+  element.classList.add("slect");
+  slectIcon = element;
+};
 
 function deselectIcon(element) {
-  element.classList.remove("slect")
-  slectIcon = undefined
-}
+  element.classList.remove("slect");
+  slectIcon = undefined;
+};
 
 function handleIconSlect(element) {
   if (element.classList.contains("slect")){
-    deselectIcon(element)
-    openWindow(window)
+    deselectIcon(element);
+    openWindow(window);
   } else {
-    selectIcon(element)
-  }
+    selectIcon(element);
+  };
   
-}
+};
