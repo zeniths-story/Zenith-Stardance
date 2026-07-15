@@ -12,6 +12,7 @@ body{
     background-image: url(space.jpg);
     background-size: cover;
     height: 100vh;
+    
 
 }
 
@@ -62,33 +63,18 @@ body{
     cursor: pointer;
 }
 
-.apps{
+#deskApps{
     padding: 64px 16px;
-    text-align: center;
-    padding: 15px;
     width: fit-content;
-    filter: drop-shadow(0 0 10px rgb(240, 67, 67));
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
-.apps img {
-    width: 64px; 
-    height: 64px; 
-    border-radius: 20px;
+#deskApps img{
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+   
 }
 
-#apps {
-    position: absolute;
-    width: 100%;
-    top: 4%;
-    height: 96%;
-    display: flex;
-    
-}
-
-.slect img{
-    border: solid rgb(44, 182, 247) 2px;
+.selected img {
+    border: solid aqua 2px;
 }

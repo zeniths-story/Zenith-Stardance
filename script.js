@@ -4,17 +4,14 @@ setInterval(function () {
     document.querySelector("#timeOfEarth").innerHTML = new Date().toLocaleString();
 }, 1000);
 
-var topBar = document.getElementById("top")
-var highindx = 1;
 
 //defining screens
 var welcomeScreen = document.getElementById("wlcmescrn");
-var notesScreen = document.getElementById("NovaNotes");
 
 //dragging elements
 //elements we can drag
 dragElement(welcomeScreen);
-//dragElement(notesScreen);
+
 
 //defining dragElement
 function dragElement(element) {
@@ -48,34 +45,10 @@ function dragElement(element) {
   };
 };
 
-//app stuff
-//var slectIcon = undefined;
-
-//function selectIcon(element) {
-  //element.classList.add("slect");
-  //slectIcon = element;
-//};
-
-//function deselectIcon(element) {
-  //element.classList.remove("slect");
-  //slectIcon = undefined;
-//};
-
-//function handleIconSlect(element) {
-  //if (element.classList.contains("slect")){
-   // deselectIcon(element);
-   // openWindow(window);
- // } else {
- //   selectIcon(element);
-//  };
-  
-//};
-
 //opening and closing
 
 //close def.
 var welcomeScreenClose = document.getElementById("wlcmeclose");
-var notesclose = document.getElementById("novanotesclose")
 
 function closeWindow(element) {
     element.style.display = "none";
@@ -87,9 +60,7 @@ var welcomeScreenOpen = document.getElementById("wlcmeopen");
 
 function openWindow(element){
     element.style.display = "flex";
-    highindx++;
-    element.style.zIndex = highindx;
-    topBar.style.zIndex = highindx + 1
+    
 };
 
 //open/close commands
@@ -101,31 +72,24 @@ welcomeScreenOpen.addEventListener("click", function () {
     openWindow(welcomeScreen);
 });
 
+//app stuff
+var selected = undefined
 
-//notesclose.addEventListener("click", function () {
-    //closeWindow(notesScreen);
-//});
+function selectIcon(element) {
+  element.classList.add("selected")
+  selected = element
+}
 
-//window tap handling
+function deselect (element){
+  element.classList.remove("selected")
+  selected = undefined
+}
 
-//function handWindTap (element) {
- // highindx++;
- // element.style.zIndex = highindx
-  //deselectIcon(slectIcon)
-//};
-
-//function addWindTapHand(element){
- // element.addEventListener("click", function(){ 
- //   handWindTap(element)
-//  });
-//};
-
-//initilizing windows
-//function initwind(elementName) {
-  //var screen = document.querySelector("#"+ elementName);
-  //addWindTapHand(screen)
-  //dragElement(screen)
-  //makeCloseable(elementName);
-//}
-
-//initwind(notesScreen)
+function handIconTap(element){
+  if (element.classList.contains("selected")) {
+    deselect(element)
+    openWindow(window)
+  } else {
+    selectIcon(element)
+  }
+}

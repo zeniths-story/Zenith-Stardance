@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nova OS </title>
+    <title>NovaOS </title>
     <link href="/style.css" rel="stylesheet"/>
   </head>
 
@@ -13,9 +13,29 @@
     <p><a id="wlcmeopen">WelcWind</a> 
     <a href="https://apod.nasa.gov/apod/ap260622.html">Bg</a></p>
 
-    <h3>Nova OS</h3>
+    <h3>NovaOS</h3>
     <p id="timeOfEarth">earthtime</p> <!--time string-->
 
+  </div>
+
+  <!--App stuff-->
+<div id="deskApps">
+  <div class="selected">
+    <img src="./novanotes.PNG">
+  </div>
+  <p>Nova Notes</p>
+  
+</div>
+
+<div id="novaNotes" class="window">
+
+   <div class="windowheader" id="nnheader">
+    <p style="width: fit-content;">Nova Notes</p>
+    <p class="closebtn" id="nnclose">X</p>
+   </div> 
+   <h1>Nova Notes</h1>
+   <p>Updates 'n' Stuff</p>
+   <p>Notes version: v0.0.1</p>
   </div>
 
 <!-- Welcome Window-->
@@ -24,34 +44,12 @@
    <div class="windowheader" id="wlcmescrnheader">
     <p style="width: fit-content;">WelcWind</p>
     <p class="closebtn" id="wlcmeclose">X</p>
-   </div>
-   <h1>Nova OS</h1>
+   </div> 
+   <h1>NovaOS</h1>
    <p> This is my wip os</p>
-   <p>v0.0.20</p>
+   <p>v0.0.21</p>
   </div>
 
-<!--App icons--
-
-<div id="apps">
-
-  <div class="apps slect">
-      <img src="./novanotes.PNG">
-      <p>Nova <br/> Notes</p>
-  </div>    
-  
-
-</div>
-
-<div class="window" id="NovaNotes" 
-    style="cursor: pointer; display: none;">
-    <div class="windowheader" id="NovaNotesheader">
-      <div class="closebtn" id="novanotesclose" style="cursor: pointer;">
-        <p>X</p>
-      </div>
-      <p>Nova Notes</p>
-    </div>
-    <p> notesstuffs</p>
-  </div>-->
 
 <!--everything below this stays right where it is-->
   <script src="/script.js"></script>
