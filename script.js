@@ -159,11 +159,11 @@ var notecontent = [
    <br />`,
   },
   {
-    title: `<p contenteditable = "true"> Title </p>`,
+    title: `<p> See yesterday </p>`,
     date: "7/16/26",
     content: `
-    <p contenteditable="true">
-    start typing here
+    <p>
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     </p>`
   },
   {
@@ -210,7 +210,7 @@ for (let i=0; i< notecontent.length; i++) {
 };
 
 
-zenApp
+//zenApp
 var zencontent = [
   {
     zentitle: "About",
