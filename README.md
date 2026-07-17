@@ -2,10 +2,11 @@
 a small OS which is space-themed because I love space :3
 
 Features: 
--Nova Notes
--- a notepad with all my complaints to javascript for being mean
+-Nova Notes/n
+-- a notepad with all my complaints to javascript for being mean\n
 -- currently doesn't work T-T
--ZenApp
+
+-ZenApp/n
 -- An app that tells you all about Me! (Zenith)
 -- more sections Coming soon
 
