@@ -50,13 +50,11 @@ function dragElement(element) {
 };
 
 //opening and closing
-var welcomeScreenClose = document.getElementById("wlcmeclose");
-var welcomeScreenOpen = document.getElementById("wlcmeopen");
-
 //close def.
 
 function closeWindow(element) {
     element.style.display = "none";
+    deselect(element);
 
 };
 
@@ -67,24 +65,18 @@ function openWindow(element){
     highIndex++;
     element.style.zIndex = highIndex;
     topBar.style.zIndex = highIndex + 1;
+    selectIcon(element);
 };
-
-//open/close commands
-welcomeScreenClose.addEventListener("click", function () {
-    closeWindow(welcomeScreen);
-});
-
-welcomeScreenOpen.addEventListener("click", function () {
-    openWindow(welcomeScreen);
-});
 
 function makeClose(element) {
  var close = document.getElementById(element.id + "close");
  close.addEventListener("click", () => closeWindow(element));
+ 
 };
 makeClose(novaNotes);
 makeClose(zenApp);
-//makeClose(welcomeScreen);
+makeClose(welcomeScreen);
+
 
 function makeOpen(element) {
 var open = document.getElementById(element.id + "open");
@@ -92,30 +84,23 @@ open.addEventListener("click", () => openWindow(element));
 };
 makeOpen(novaNotes);
 makeOpen(zenApp);
-//makeOpen(welcomeScreen);
+makeOpen(welcomeScreen);
+
 
 //app stuff
 var selected = undefined;
 
 function selectIcon(element) {
-  element.classList.add("selected");
+  var icon = document.getElementById(element.id + "open")
+  icon.classList.add("selected");
   selected = element;
 };
 
 function deselect (element){
-  element.classList.remove("selected");
-  console.log(selected);
+  var icon = document.getElementById(element.id + "open")
+  icon.classList.remove("selected");
   selected = undefined;
 };
-
-//function handIconTap(element){
-  //if (element.classList.contains("selected")) {
-   // deselect(element);
-   // openWindow(window);
-  //} else {
-   // selectIcon(element);
- // };
-//};
 
 var highIndex = 1;
 var topBar = document.getElementById("top")
@@ -124,7 +109,6 @@ function handWindTap(element) {
   highIndex++;
   element.style.zIndex = highIndex;
   topBar.style.zIndex = highIndex + 1;
-  deselect(selected);
 };
 
 function addWindTapHand(element) {
@@ -133,20 +117,20 @@ function addWindTapHand(element) {
   });
 };
 
-addWindTapHand(novaNotes);
 addWindTapHand(welcomeScreen);
+addWindTapHand(novaNotes);
 addWindTapHand(zenApp);
 
 function initWind(elementName){
-  var screen = document.getElementById("elementName");
+  var screen = document.querySelector("#elementName");
+  console.log(screen);
   addWindTapHand(screen);
-  dragElement(screen);
+  //dragElement(screen);
   makeClose(elementName);
   makeOpen(elementName);
 };
 
 //initilized windows
-
 //initWind(welcomeScreen);
 //initWind(novaNotes);
 //initWind(zenApp);
@@ -197,6 +181,9 @@ var notecontent = [
     - added slight transparency to WelcWind<br/>
     - changed header<br/>
     - why is notes always the one breaking??? <br/>
+    - windows can now come to top when clicked! <br/>
+    - selecting/deselecting works<br/>
+    - optimized open/closing<br/>
     </p>`
   },
 ];
