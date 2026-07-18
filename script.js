@@ -150,7 +150,7 @@ function initWind(elementName){
 //Nova Notes
 var notecontent = [
    {
-    date: "About Notes",
+    date: "About NN",
     content: `
     <p> This app houses a lot of me complaining about javascript as well as OS Updates/Changes</p>`,
   },
@@ -191,6 +191,7 @@ var notecontent = [
     - changed scrollbar color :D<br/>
     - added slight transparency to WelcWind<br/>
     - changed header<br/>
+    - why is notes always the one breaking??? <br/>
     </p>`
   },
 ];

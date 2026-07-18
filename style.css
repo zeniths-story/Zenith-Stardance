@@ -107,11 +107,10 @@ body{
     display: flex;
     flex-direction: row;
     text-align: left;
-    justify-content: flex-start;
+    justify-content: space-around;
     overflow-y: auto;
     overflow-wrap: anywhere;
     scrollbar-color: #9734d1 #000022;
-    scrollbar-gutter: stable;
 }
 
 .sidebar {
@@ -120,10 +119,7 @@ body{
     padding: 5px;
     border-radius: 5px;
     overflow-y: auto;
-    overflow-x: hidden;
-    max-width: 78px;
-    max-height: 50%;
-    position: fixed;
+    max-width: 88px;
     z-index: 1;
     scrollbar-color: inherit;
     scrollbar-gutter: stable;
@@ -131,12 +127,12 @@ body{
 
 .txt{
     max-width: 230px;
-    position: relative;
-    left: 30px;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    scrollbar-gutter: stable;
 }
 
 .version{
-    
     justify-content: center;
     align-self: flex-end;
 }
@@ -146,9 +142,6 @@ body{
     background-color: #da71ae;
     color: #facbe1;
     border: solid  #ff0080;
-    display: flex;
-    
-    
 }
 
 #novaNotes .sidebar,  #novaNotesheader{
