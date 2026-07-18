@@ -60,6 +60,7 @@ body{
     padding: 0px 5px;
     border-radius: 4px;
     color: red;
+    border: solid red 1px;
     cursor: pointer;
 }
 
@@ -95,34 +96,13 @@ body{
     min-height: 100px;
 }
 
-#novaNotes{
-    height: 290px;
-    background-color: #6d1365;
-    color: #000222;
-}
-
-#novaNotes .sidebar{
-    background-color: #000222;
-    color: #3a2dc4;
-}
-
- #novaNotesheader{
-    background-color: #000222;
-    color: #3a2dc4;
-
- }
-
-#novaNotesopen p {
-     filter: drop-shadow( 0 0 8px red);
-}
-
 .content{
     width: 350px;
     display: flex;
     flex-direction: row;
     text-align: left;
     justify-content: flex-start;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .sidebar {
@@ -147,4 +127,24 @@ body{
     display: flex;
     justify-content: center;
     align-self: flex-end;
+}
+
+#novaNotes{
+    height: 290px;
+    background-color: #da71ae;
+    color: #facbe1;
+    border: solid  #ff0080;
+}
+
+#novaNotes .sidebar,  #novaNotesheader{
+    background-color: #aa1754;
+    color: #fa427f;
+}
+
+#novaNotesopen p {
+     filter: drop-shadow( 0 0 8px red);
+}
+
+#zenapp{
+    max-height: fit-content;
 }

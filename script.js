@@ -150,7 +150,6 @@ function initWind(elementName){
 //Nova Notes
 var notecontent = [
   {
-    title: "struggles",
     date: "7/15/26",
     content: `
     <p contenteditable="true"> javascript doesn't like me very much. 
@@ -159,7 +158,6 @@ var notecontent = [
    <br />`,
   },
   {
-    title: `<p> See yesterday </p>`,
     date: "7/16/26",
     content: `
     <p>
@@ -167,8 +165,7 @@ var notecontent = [
     </p>`
   },
   {
-    title: `<p> List of projects for NovaOS </p>`,
-    date: "7/16/26",
+    date: "Plans for NovaOS",
     content: `
     <p contenteditable="true">
     -Zenith app<br>
@@ -178,11 +175,20 @@ var notecontent = [
     -<s>app location</s> <br>
     </p>`
   },
+   {
+    date: "7/18/26",
+    content: `
+    <p>
+    Fixed notes!<br/>
+    Deleted titles from notes bc cloging sidebar; more like Date/title now
+    changed notes color scheme
+    </p>`
+  },
 ];
 
 function setNoteContent(index) {
   var notetext = document.getElementById("noteText");
-  notetext.innerHTML = notecontent[index].notecontent;
+  notetext.innerHTML = notecontent[index].content;
 };
 
 setNoteContent(0)
@@ -192,9 +198,6 @@ function addToNoteBar(index) {
   var note = notecontent[index];
   var newDiv = document.createElement("div");
   newDiv.innerHTML = `
-  <p>
-  ${note.title}
-  </p>
   <p>
   ${note.date}
   </p>`;
@@ -227,7 +230,7 @@ var zencontent = [
     zencontent: `
     <p> 
     PHM, MHA, ASoUE, E:TM, TADC, Owl House, KotLC, Ranboo
-    
+    <br/>
     <a href="https://zeniths-story.carrd.co/#handi" target="blank" > See More </a> </p>`,
   },
   {
@@ -239,12 +242,13 @@ var zencontent = [
     Gender: Fluid <br/>
     Age: 16 <br/>
     <br/>
-    Has: Anxiety, (depression?), (AuDHD?), braces, a will to live, (osdd1-b?), three cats <br/>
-    Is: Creative, plural, tired of JS not working, alterhuman<br>
+    Has: Anxiety, (depression?), (AuDHD?), braces, a will to live, (osdd1-b?), three cats 
+    <br/> <br/>
+    Is: Creative, plural, tired of JS not working, alterhuman
+    <br/><br/>
     Should: probably go outside once in a while, buy more art supplies, have breakfast, 
-    actually focus on school once that starts up, get more exercise <br/>
-
-
+    actually focus on school once that starts up, get more exercise, go to therapy 
+    <br/>
 
     <br/>
     <a href="https://zeniths-story.carrd.co" target="blank" > Learn More </a> </p>`,

@@ -11,7 +11,7 @@ Features:
 
 -- a notepad with all my complaints to javascript for being mean
 
--- currently doesn't work T-T
+-- Works! Fixed! yayayyay
 
 -ZenApp
 
