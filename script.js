@@ -11,11 +11,6 @@ var novaNotes = document.getElementById("novaNotes");
 var zenApp = document.getElementById("zenApp");
 
 //dragging elements
-//elements we can drag
-dragElement(welcomeScreen);
-dragElement(novaNotes);
-dragElement(zenApp);
-
 
 //defining dragElement
 function dragElement(element) {
@@ -55,6 +50,9 @@ function dragElement(element) {
 function closeWindow(element) {
     element.style.display = "none";
     deselect(element);
+    sessionStorage.removeItem(document.getElementById(element.id));
+    sessionStorage.removeItem(open);
+    sessionStorage.removeItem(0);
 
 };
 
@@ -66,26 +64,30 @@ function openWindow(element){
     element.style.zIndex = highIndex;
     topBar.style.zIndex = highIndex + 1;
     selectIcon(element);
+    var openWinds = document.getElementById(element.id);
+    console.log(openWinds);
+    sessionStorage.setItem(openWinds, openWinds);
+    console.log(sessionStorage);
+};
+
+function onLaunch(element) {
+  if (sessionStorage.getItem(element)){
+    //console.log(sessionStorage.getItem(element));
+    openWindow(element);
+  };
 };
 
 function makeClose(element) {
  var close = document.getElementById(element.id + "close");
  close.addEventListener("click", () => closeWindow(element));
+ //console.log(close);
  
 };
-makeClose(novaNotes);
-makeClose(zenApp);
-makeClose(welcomeScreen);
-
 
 function makeOpen(element) {
 var open = document.getElementById(element.id + "open");
 open.addEventListener("click", () => openWindow(element));
 };
-makeOpen(novaNotes);
-makeOpen(zenApp);
-makeOpen(welcomeScreen);
-
 
 //app stuff
 var selected = undefined;
@@ -117,23 +119,20 @@ function addWindTapHand(element) {
   });
 };
 
-addWindTapHand(welcomeScreen);
-addWindTapHand(novaNotes);
-addWindTapHand(zenApp);
 
 function initWind(elementName){
-  var screen = document.querySelector("#elementName");
-  console.log(screen);
+  var screen = document.getElementById(elementName.id);
   addWindTapHand(screen);
-  //dragElement(screen);
+  dragElement(screen);
   makeClose(elementName);
   makeOpen(elementName);
+  onLaunch(elementName);
 };
 
 //initilized windows
-//initWind(welcomeScreen);
-//initWind(novaNotes);
-//initWind(zenApp);
+initWind(welcomeScreen);
+initWind(novaNotes);
+initWind(zenApp);
 
 
 //Nova Notes
@@ -150,7 +149,7 @@ var notecontent = [
     -Zenith app<br/>
     -"making of" app<br/>
     -PHM app? <br/>
-    - settings?<br/>
+    -Settings?<br/>
     -better handles <br/>
     -<s>app location</s> <br/>
     </p>`
@@ -184,6 +183,14 @@ var notecontent = [
     - windows can now come to top when clicked! <br/>
     - selecting/deselecting works<br/>
     - optimized open/closing<br/>
+    </p>`
+  },
+   {
+    date: "7/19/26",
+    content: `
+    <p>
+    - IT WORKSSSSS HAHAHAHHAHAHA >:D<br/>
+    - initWind implemented!
     </p>`
   },
 ];
