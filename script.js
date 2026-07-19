@@ -67,7 +67,7 @@ function openWindow(element){
     var openWinds = document.getElementById(element.id);
     console.log(openWinds);
     sessionStorage.setItem(openWinds, openWinds);
-    console.log(sessionStorage);
+    //console.log(sessionStorage);
 };
 
 function onLaunch(element) {
