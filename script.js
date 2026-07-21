@@ -67,7 +67,7 @@ function onLaunch(element) {
     openWindow(element);
     var notePage = sessionStorage.getItem("notesPage");
     console.log(notePage)
-    //setNoteContent(notePage);
+   // setNoteContent(notePage);
   };
   
   function setPos(element) {
@@ -372,11 +372,11 @@ var setcontent = [
   {
     pagename:"Colors",
     pagecont:`
-    <p> Set Main Color</p>
-    <p> Set Secondary Color</p>
-    <p> Set Tertiary Color</p>
-    <p> Set Main Text Color</p>
-    <p> Set Secondary Text Color</p>
+    <p> Set Main Color</p> <div id="currMainCol" class="currCol"></div>
+    <p> Set Secondary Color</p> <div id="currSecCol" class="currCol"></div>
+    <p> Set Tertiary Color</p> <div id="currTerCol" class="currCol"></div>
+    <p> Set Main Text Color</p> <div id="currMainTxtCol" class="currCol"></div>
+    <p> Set Secondary Text Color</p> <div id="currSecTxtCol" class="currCol"></div>
     `
   },
 

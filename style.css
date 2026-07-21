@@ -191,3 +191,8 @@ body{
     max-height: 400px;  
     min-height: 100px;
 }
+
+.currCol{
+    border-radius: 4px;
+    background-color: white;
+}
